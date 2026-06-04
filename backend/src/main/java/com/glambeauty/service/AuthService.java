@@ -18,8 +18,10 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class AuthService {
     private final AuthenticationManager authenticationManager;
     private final UserRepository userRepository;
@@ -48,7 +50,8 @@ public class AuthService {
     }
 
     public AuthResponse register(RegisterRequest request) {
-        if (userRepository.existsByEmail(request.email())) {
+        String emailLower = request.email() != null ? request.email().toLowerCase(java.util.Locale.ROOT) : "";
+        if (userRepository.existsByEmail(emailLower)) {
             throw new BadRequestException("Email already exists");
         }
 
@@ -56,7 +59,7 @@ public class AuthService {
             .orElseThrow(() -> new BadRequestException("Role not configured"));
 
         User user = new User();
-        user.setEmail(request.email());
+        user.setEmail(emailLower);
         user.setPassword(passwordEncoder.encode(request.password()));
         user.setRole(role);
         user.setEnabled(true);
@@ -75,10 +78,11 @@ public class AuthService {
     }
 
     public AuthResponse login(LoginRequest request) {
+        String emailLower = request.email() != null ? request.email().toLowerCase(java.util.Locale.ROOT) : "";
         authenticationManager.authenticate(
-            new UsernamePasswordAuthenticationToken(request.email(), request.password())
+            new UsernamePasswordAuthenticationToken(emailLower, request.password())
         );
-        User user = userRepository.findByEmail(request.email())
+        User user = userRepository.findByEmail(emailLower)
             .orElseThrow(() -> new BadRequestException("Invalid credentials"));
         String token = jwtService.generateToken(user);
         String role = user.getRole() != null && user.getRole().getName() != null ? user.getRole().getName().name() : null;
@@ -86,7 +90,8 @@ public class AuthService {
     }
 
     public void forgotPassword(ForgotPasswordRequest request) {
-        userRepository.findByEmail(request.email()).ifPresent(user -> {
+        String emailLower = request.email() != null ? request.email().toLowerCase(java.util.Locale.ROOT) : "";
+        userRepository.findByEmail(emailLower).ifPresent(user -> {
             notificationService.sendEmail(
                 user.getEmail(),
                 "Password reset",

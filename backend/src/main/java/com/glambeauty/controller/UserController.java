@@ -12,8 +12,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.glambeauty.domain.User;
+import com.glambeauty.dto.UserProfileDto;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.RequestBody;
+
 @RestController
-@RequestMapping("/api/admin/users")
 public class UserController {
     private final UserService userService;
 
@@ -21,15 +25,25 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping
+    @GetMapping("/api/admin/users")
     @PreAuthorize("hasRole('ADMIN')")
     public List<UserResponse> getAll() {
         return userService.getAllUsers();
     }
 
-    @PutMapping("/{id}/role")
+    @PutMapping("/api/admin/users/{id}/role")
     @PreAuthorize("hasRole('ADMIN')")
     public UserResponse updateRole(@PathVariable Long id, @RequestParam RoleName role) {
         return userService.updateRole(id, role);
+    }
+
+    @GetMapping("/api/users/me")
+    public UserProfileDto getMyProfile(@AuthenticationPrincipal User user) {
+        return userService.getProfile(user);
+    }
+
+    @PutMapping("/api/users/me")
+    public UserProfileDto updateMyProfile(@AuthenticationPrincipal User user, @RequestBody UserProfileDto dto) {
+        return userService.updateProfile(user, dto);
     }
 }

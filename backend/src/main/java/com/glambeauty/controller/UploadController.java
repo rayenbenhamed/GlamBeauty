@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
-@RequestMapping("/api/admin/upload")
+@RequestMapping("/api/upload")
 public class UploadController {
     private final ImageUploadService imageUploadService;
 
@@ -18,7 +18,6 @@ public class UploadController {
     }
 
     @PostMapping
-    @PreAuthorize("hasRole('ADMIN')")
     public String upload(@RequestParam("file") MultipartFile file, @RequestParam(required = false) String folder) {
         return imageUploadService.upload(file, folder);
     }

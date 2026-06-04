@@ -3,10 +3,10 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 
-const CalendarPanel = () => {
-  const events = [
-    { title: "Bridal Trial", start: "2026-05-06T11:00:00" },
-    { title: "Balayage", start: "2026-05-07T15:30:00" }
+const CalendarPanel = ({ events }) => {
+  const defaultEvents = [
+    { title: "Bridal Trial", start: "2026-06-06T11:00:00" },
+    { title: "Balayage", start: "2026-06-07T15:30:00" }
   ];
 
   return (
@@ -19,7 +19,7 @@ const CalendarPanel = () => {
           center: "title",
           right: "dayGridMonth,timeGridWeek,timeGridDay"
         }}
-        events={events}
+        events={events || defaultEvents}
         height="auto"
       />
     </div>

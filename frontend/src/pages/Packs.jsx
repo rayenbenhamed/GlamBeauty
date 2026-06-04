@@ -1,8 +1,23 @@
+import { useState, useEffect } from "react";
+import apiClient from "@/api/client";
 import SectionHeader from "@/components/SectionHeader.jsx";
 import PackCard from "@/components/cards/PackCard.jsx";
-import { packs } from "@/data/mockData";
 
 const Packs = () => {
+  const [packs, setPacks] = useState([]);
+
+  useEffect(() => {
+    const fetchPacks = async () => {
+      try {
+        const response = await apiClient.get("/packs");
+        setPacks(response.data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchPacks();
+  }, []);
+
   return (
     <main className="section-shell py-16">
       <SectionHeader

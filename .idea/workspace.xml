@@ -4,65 +4,215 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="589f7d8c-7c4f-42bb-9a66-6b59b12c0c56" name="Changes" comment="" />
+    <list default="true" id="589f7d8c-7c4f-42bb-9a66-6b59b12c0c56" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/glambeauty/config/SeedDataConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/glambeauty/config/SeedDataConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/glambeauty/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/glambeauty/controller/UploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/glambeauty/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/glambeauty/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/glambeauty/domain/ClientProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/glambeauty/domain/ClientProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/glambeauty/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/glambeauty/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/glambeauty/service/ImageUploadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/glambeauty/service/ImageUploadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/glambeauty/service/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/glambeauty/service/ReservationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/glambeauty/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/glambeauty/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/GlamBeautyApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/GlamBeautyApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/config/CloudinaryConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/config/CloudinaryConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/config/SeedDataConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/config/SeedDataConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/AdminStatsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/AdminStatsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/AuthController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/AvailabilityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/AvailabilityController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/BlogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/BlogController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/CategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/CategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/EstheticianController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/EstheticianController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/GalleryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/GalleryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/NotificationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/NotificationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/PackController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/PackController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/PromotionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/PromotionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/ReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/ReservationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/ReviewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/ReviewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/ScheduleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/ScheduleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/ServiceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/ServiceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/UploadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/UploadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/Availability.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/Availability.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/BeautyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/BeautyService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/BlogArticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/BlogArticle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/ClientProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/ClientProfile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/EstheticianProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/EstheticianProfile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/GalleryItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/GalleryItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/Notification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/Pack.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/Pack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/Promotion.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/Promotion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/Reservation.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/Reservation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/Review.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/Review.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/Schedule.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/Schedule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/ServiceCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/ServiceCategory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/enums/AvailabilityType.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/enums/AvailabilityType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/enums/GalleryCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/enums/GalleryCategory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/enums/NotificationType.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/enums/NotificationType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/enums/ReservationStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/enums/ReservationStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/enums/RoleName.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/domain/enums/RoleName.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/AdminStatsResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/AdminStatsResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/AuthResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/AuthResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/AvailabilityRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/AvailabilityRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/AvailabilityResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/AvailabilityResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/BlogArticleRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/BlogArticleRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/BlogArticleResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/BlogArticleResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/CategoryRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/CategoryRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/CategoryResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/CategoryResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/EstheticianResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/EstheticianResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/ForgotPasswordRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/ForgotPasswordRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/GalleryRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/GalleryRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/GalleryResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/GalleryResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/LoginRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/LoginRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/MonthlyStat.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/MonthlyStat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/PackRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/PackRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/PackResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/PackResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/PromotionRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/PromotionRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/PromotionResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/PromotionResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/RegisterRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/RegisterRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/ReservationRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/ReservationRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/ReservationResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/ReservationResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/ReviewRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/ReviewRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/ReviewResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/ReviewResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/ScheduleRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/ScheduleRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/ScheduleResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/ScheduleResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/ServiceRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/ServiceRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/ServiceResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/ServiceResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/ServiceStat.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/ServiceStat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/UserResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/dto/UserResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/exception/ApiError.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/exception/ApiError.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/exception/BadRequestException.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/exception/BadRequestException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/exception/GlobalExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/exception/NotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/exception/NotFoundException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/exception/UnauthorizedException.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/exception/UnauthorizedException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/AvailabilityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/AvailabilityMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/BlogMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/BlogMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/CategoryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/CategoryMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/EstheticianMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/EstheticianMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/GalleryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/GalleryMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/PackMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/PackMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/PromotionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/PromotionMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/ReservationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/ReservationMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/ReviewMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/ReviewMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/ScheduleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/ScheduleMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/ServiceMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/ServiceMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/AvailabilityRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/AvailabilityRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/BeautyServiceRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/BeautyServiceRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/BlogArticleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/BlogArticleRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/ClientProfileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/ClientProfileRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/EstheticianProfileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/EstheticianProfileRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/GalleryItemRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/GalleryItemRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/NotificationRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/NotificationRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/PackRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/PackRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/PromotionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/PromotionRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/ReservationRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/ReservationRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/ReviewRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/ReviewRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/RoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/RoleRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/ScheduleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/ScheduleRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/ServiceCategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/ServiceCategoryRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/security/CustomUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/security/CustomUserDetailsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/security/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/security/JwtAuthenticationFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/security/JwtService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/security/JwtService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/security/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/AdminStatsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/AdminStatsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/AuthService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/AvailabilityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/AvailabilityService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/BlogService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/BlogService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/CategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/CategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/EstheticianService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/EstheticianService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/GalleryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/GalleryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/ImageUploadService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/ImageUploadService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/NotificationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/NotificationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/PackService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/PackService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/PromotionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/PromotionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/ReservationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/ReservationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/ReviewService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/ReviewService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/ScheduleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/ScheduleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/ServiceCatalogService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/ServiceCatalogService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/glambeauty/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/client.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/BookingPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/BookingPanel.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/cards/EstheticianCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/cards/EstheticianCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/cards/PackCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/cards/PackCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/cards/ServiceCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/cards/ServiceCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/layout/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/layout/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Estheticians.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Estheticians.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Packs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Packs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Services.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Services.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="299" />
+    <option name="cachedIndexableFilesCount" value="342" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "emna554"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;emna554&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/rayenbenhamed/GlamBeauty.git",
-    "accountId": "35eb1c11-ca8d-4da5-9988-4c4b8d818d26"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/rayenbenhamed/GlamBeauty.git&quot;,
+    &quot;accountId&quot;: &quot;35eb1c11-ca8d-4da5-9988-4c4b8d818d26&quot;
   }
-}]]></component>
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3EXKizMaus7XJGwo1Fs9WFzwnON" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Rayen/Desktop/Centre esthetique",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Rayen/Desktop/Centre esthetique&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.AcpAgentsConfigurable&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="589f7d8c-7c4f-42bb-9a66-6b59b12c0c56" name="Changes" comment="" />
@@ -75,5 +225,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

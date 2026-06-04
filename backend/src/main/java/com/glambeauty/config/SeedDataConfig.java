@@ -31,6 +31,12 @@ public class SeedDataConfig {
         ServiceCategoryRepository categoryRepository,
         BeautyServiceRepository serviceRepository,
         EstheticianProfileRepository estheticianRepository,
+        com.glambeauty.repository.PackRepository packRepository,
+        com.glambeauty.repository.ReviewRepository reviewRepository,
+        com.glambeauty.repository.ReservationRepository reservationRepository,
+        com.glambeauty.repository.ClientProfileRepository clientProfileRepository,
+        com.glambeauty.repository.NotificationRepository notificationRepository,
+        com.glambeauty.repository.ScheduleRepository scheduleRepository,
         PasswordEncoder passwordEncoder,
         @Value("${app.default-admin.email}") String adminEmail,
         @Value("${app.default-admin.password}") String adminPassword,
@@ -42,10 +48,13 @@ public class SeedDataConfig {
                 .orElseGet(() -> roleRepository.save(new Role(RoleName.ADMIN)));
             Role estheticianRole = roleRepository.findByName(RoleName.ESTHETICIAN)
                 .orElseGet(() -> roleRepository.save(new Role(RoleName.ESTHETICIAN)));
+            Role clientRole = roleRepository.findByName(RoleName.CLIENT)
+                .orElseGet(() -> roleRepository.save(new Role(RoleName.CLIENT)));
 
-            if (!userRepository.existsByEmail(adminEmail)) {
+            String adminEmailLower = adminEmail != null ? adminEmail.toLowerCase(java.util.Locale.ROOT) : "";
+            if (!userRepository.existsByEmail(adminEmailLower)) {
                 User admin = new User();
-                admin.setEmail(adminEmail);
+                admin.setEmail(adminEmailLower);
                 admin.setPassword(passwordEncoder.encode(adminPassword));
                 admin.setRole(adminRole);
                 admin.setEnabled(true);
@@ -54,118 +63,108 @@ public class SeedDataConfig {
             }
 
             if (categoryRepository.count() == 0) {
-                ServiceCategory makeupCategory = new ServiceCategory();
-                makeupCategory.setName("Makeup");
-                makeupCategory.setDescription("Luxury makeup artistry");
+                // Makeup
+                ServiceCategory makeup = new ServiceCategory();
+                makeup.setName("Makeup");
+                makeup.setDescription("Professional makeup styling and bridal packages");
+                categoryRepository.save(makeup);
 
-                ServiceCategory hairColoringCategory = new ServiceCategory();
-                hairColoringCategory.setName("Hair Coloring");
-                hairColoringCategory.setDescription("Premium color services");
+                createService(serviceRepository, "Professional Makeup", "Flawless, event-ready professional makeup styling", new BigDecimal("80"), 60, makeup);
+                createService(serviceRepository, "Bridal Makeup", "Luxury long-lasting bridal makeup package", new BigDecimal("250"), 90, makeup);
 
-                ServiceCategory hairTreatmentsCategory = new ServiceCategory();
-                hairTreatmentsCategory.setName("Hair Treatments");
-                hairTreatmentsCategory.setDescription("Restorative hair rituals");
+                // Hair Coloring
+                ServiceCategory hairColoring = new ServiceCategory();
+                hairColoring.setName("Hair Coloring");
+                hairColoring.setDescription("Expert hair coloring, dyes, and highlights");
+                categoryRepository.save(hairColoring);
 
-                ServiceCategory faceCareCategory = new ServiceCategory();
-                faceCareCategory.setName("Face Care");
-                faceCareCategory.setDescription("Signature facial experiences");
+                createService(serviceRepository, "Coloring", "Full head single process professional coloring", new BigDecimal("120"), 120, hairColoring);
+                createService(serviceRepository, "Balayage", "Hand-painted sun-kissed natural highlighting balayage", new BigDecimal("180"), 150, hairColoring);
+                createService(serviceRepository, "Ombre", "Elegant seamless color gradient melt", new BigDecimal("160"), 150, hairColoring);
+                createService(serviceRepository, "Highlights", "Dimensional foil highlights and accents", new BigDecimal("140"), 120, hairColoring);
 
-                ServiceCategory handsFeetCategory = new ServiceCategory();
-                handsFeetCategory.setName("Hands and Feet");
-                handsFeetCategory.setDescription("Manicure and pedicure");
+                // Hair Treatments
+                ServiceCategory hairTreatments = new ServiceCategory();
+                hairTreatments.setName("Hair Treatments");
+                hairTreatments.setDescription("Nourishing and restorative deep hair treatments");
+                categoryRepository.save(hairTreatments);
 
-                ServiceCategory hairRemovalCategory = new ServiceCategory();
-                hairRemovalCategory.setName("Hair Removal");
-                hairRemovalCategory.setDescription("Smooth waxing services");
+                createService(serviceRepository, "Protein", "Deep nourishing protein hair reconstructor", new BigDecimal("200"), 180, hairTreatments);
+                createService(serviceRepository, "Caviar", "Luxury anti-aging and hydration caviar mask", new BigDecimal("250"), 180, hairTreatments);
+                createService(serviceRepository, "Tanino", "Natural organic tannin smoothing treatment", new BigDecimal("220"), 180, hairTreatments);
+                createService(serviceRepository, "Hair Straightening", "Pro-keratin intense thermal straightening and silk press", new BigDecimal("150"), 120, hairTreatments);
 
-                ServiceCategory nailsCategory = new ServiceCategory();
-                nailsCategory.setName("Nails");
-                nailsCategory.setDescription("Artful nail design");
+                // Face Care
+                ServiceCategory faceCare = new ServiceCategory();
+                faceCare.setName("Face Care");
+                faceCare.setDescription("Restorative and cleansing facial care treatments");
+                categoryRepository.save(faceCare);
 
-                ServiceCategory lashesCategory = new ServiceCategory();
-                lashesCategory.setName("Eyelashes");
-                lashesCategory.setDescription("Lash enhancements");
+                createService(serviceRepository, "Basic Facial Care", "Gentle skin cleaning, exfoliation, and hydration", new BigDecimal("60"), 45, faceCare);
+                createService(serviceRepository, "Advanced Facial Care", "Targeted anti-aging, chemical peel, and firming treatment", new BigDecimal("120"), 75, faceCare);
 
-                ServiceCategory piercingCategory = new ServiceCategory();
-                piercingCategory.setName("Piercing");
-                piercingCategory.setDescription("Safe piercing services");
+                // Hands and Feet
+                ServiceCategory handsAndFeet = new ServiceCategory();
+                handsAndFeet.setName("Hands and Feet");
+                handsAndFeet.setDescription("Luxury manicures and relaxing pedicure treatments");
+                categoryRepository.save(handsAndFeet);
 
-                List<ServiceCategory> categories = List.of(
-                    makeupCategory,
-                    hairColoringCategory,
-                    hairTreatmentsCategory,
-                    faceCareCategory,
-                    handsFeetCategory,
-                    hairRemovalCategory,
-                    nailsCategory,
-                    lashesCategory,
-                    piercingCategory
-                );
-                categoryRepository.saveAll(categories);
-            }
+                createService(serviceRepository, "Manicure", "Classic nail shaping, cuticle care, and hand massage", new BigDecimal("40"), 45, handsAndFeet);
+                createService(serviceRepository, "Pedicure", "Soothing foot scrub, nail care, and polish", new BigDecimal("50"), 45, handsAndFeet);
 
-            if (serviceRepository.count() == 0) {
-                ServiceCategory makeup = categoryRepository.findAll().stream()
-                    .filter(cat -> "Makeup".equals(cat.getName()))
-                    .findFirst()
-                    .orElse(null);
-                ServiceCategory hairColoring = categoryRepository.findAll().stream()
-                    .filter(cat -> "Hair Coloring".equals(cat.getName()))
-                    .findFirst()
-                    .orElse(null);
+                // Hair Removal
+                ServiceCategory hairRemoval = new ServiceCategory();
+                hairRemoval.setName("Hair Removal");
+                hairRemoval.setDescription("Gentle body and face waxing hair removal services");
+                categoryRepository.save(hairRemoval);
 
-                BeautyService professionalMakeup = new BeautyService();
-                professionalMakeup.setName("Professional Makeup");
-                professionalMakeup.setDescription("Flawless event-ready makeup");
-                professionalMakeup.setPrice(new BigDecimal("120"));
-                professionalMakeup.setDurationMinutes(60);
-                professionalMakeup.setCategory(makeup);
+                createService(serviceRepository, "Face Waxing", "Precise brow, lip, and facial hair waxing", new BigDecimal("30"), 30, hairRemoval);
+                createService(serviceRepository, "Body Waxing", "Smooth full arm, leg, or underarm waxing", new BigDecimal("90"), 60, hairRemoval);
 
-                BeautyService bridalMakeup = new BeautyService();
-                bridalMakeup.setName("Bridal Makeup");
-                bridalMakeup.setDescription("Luxury bridal glam package");
-                bridalMakeup.setPrice(new BigDecimal("240"));
-                bridalMakeup.setDurationMinutes(90);
-                bridalMakeup.setCategory(makeup);
+                // Nails
+                ServiceCategory nails = new ServiceCategory();
+                nails.setName("Nails");
+                nails.setDescription("Advanced gel enhancements, nail polish and creative nail art");
+                categoryRepository.save(nails);
 
-                BeautyService coloring = new BeautyService();
-                coloring.setName("Coloring");
-                coloring.setDescription("Premium single process color");
-                coloring.setPrice(new BigDecimal("150"));
-                coloring.setDurationMinutes(120);
-                coloring.setCategory(hairColoring);
+                createService(serviceRepository, "Gel Nails", "Stunning builder gel extensions and overlays", new BigDecimal("80"), 90, nails);
+                createService(serviceRepository, "Permanent Nail Polish", "Long-lasting chip-resistant UV gel polish", new BigDecimal("45"), 45, nails);
+                createService(serviceRepository, "Nail Art", "Creative custom hand-painted graphic nail designs", new BigDecimal("60"), 60, nails);
 
-                BeautyService balayage = new BeautyService();
-                balayage.setName("Balayage");
-                balayage.setDescription("Sun-kissed balayage artistry");
-                balayage.setPrice(new BigDecimal("220"));
-                balayage.setDurationMinutes(150);
-                balayage.setCategory(hairColoring);
+                // Eyelashes
+                ServiceCategory eyelashes = new ServiceCategory();
+                eyelashes.setName("Eyelashes");
+                eyelashes.setDescription("Elegant semi-permanent eyelash extensions and lifts");
+                categoryRepository.save(eyelashes);
 
-                serviceRepository.saveAll(List.of(
-                    professionalMakeup,
-                    bridalMakeup,
-                    coloring,
-                    balayage
-                ));
-            }
+                createService(serviceRepository, "Lash Extensions", "Premium lightweight classic or volume lash extensions", new BigDecimal("110"), 90, eyelashes);
 
-            if (estheticianRepository.count() == 0) {
-                User estheticianUser = new User();
-                estheticianUser.setEmail("esthetician@glambeauty.com");
-                estheticianUser.setPassword(passwordEncoder.encode("Glam123!"));
-                estheticianUser.setRole(estheticianRole);
-                estheticianUser.setEnabled(true);
-                estheticianUser.setCreatedAt(Instant.now());
-                userRepository.save(estheticianUser);
+                // Piercing
+                ServiceCategory piercing = new ServiceCategory();
+                piercing.setName("Piercing");
+                piercing.setDescription("Safe, hygienic ear and body piercing services");
+                categoryRepository.save(piercing);
 
-                EstheticianProfile profile = new EstheticianProfile();
-                profile.setUser(estheticianUser);
-                profile.setDisplayName(adminFirstName + " " + adminLastName);
-                profile.setBio("Senior esthetician specializing in luxury treatments");
-                profile.setSkills("Makeup, Skin Care, Lash Extensions");
-                estheticianRepository.save(profile);
+                createService(serviceRepository, "Ear Piercing", "Hygienic earlobe or cartilage piercing", new BigDecimal("50"), 20, piercing);
+                createService(serviceRepository, "Body Piercing", "Hygienic nose, navel, or body piercing", new BigDecimal("80"), 30, piercing);
             }
         };
+    }
+
+    private static void createService(
+        BeautyServiceRepository repo,
+        String name,
+        String desc,
+        BigDecimal price,
+        Integer duration,
+        ServiceCategory category
+    ) {
+        BeautyService service = new BeautyService();
+        service.setName(name);
+        service.setDescription(desc);
+        service.setPrice(price);
+        service.setDurationMinutes(duration);
+        service.setCategory(category);
+        repo.save(service);
     }
 }

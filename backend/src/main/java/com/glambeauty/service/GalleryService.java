@@ -6,12 +6,15 @@ import com.glambeauty.dto.GalleryRequest;
 import com.glambeauty.dto.GalleryResponse;
 import com.glambeauty.mapper.GalleryMapper;
 import com.glambeauty.repository.GalleryItemRepository;
+import com.glambeauty.exception.NotFoundException;
 import java.time.Instant;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class GalleryService {
     private final GalleryItemRepository galleryRepository;
 
@@ -34,5 +37,12 @@ public class GalleryService {
         item.setAfterUrl(request.afterUrl());
         item.setCreatedAt(Instant.now());
         return GalleryMapper.toResponse(galleryRepository.save(item));
+    }
+
+    public void delete(Long id) {
+        if (!galleryRepository.existsById(id)) {
+            throw new NotFoundException("Gallery item not found with id: " + id);
+        }
+        galleryRepository.deleteById(id);
     }
 }

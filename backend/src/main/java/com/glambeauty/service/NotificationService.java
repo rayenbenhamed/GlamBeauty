@@ -56,16 +56,36 @@ public class NotificationService {
 
     public void notifyReservationCreated(Reservation reservation) {
         ReservationResponse dto = ReservationMapper.toResponse(reservation);
+        
+        // Notify client
         String message = "Reservation created for " + dto.serviceName() + " at " + dto.startTime();
         createNotification(reservation.getClient().getUser(), "Reservation created", message, NotificationType.RESERVATION_CONFIRMED);
         sendEmail(reservation.getClient().getUser().getEmail(), "Reservation confirmation", message);
+
+        // Notify esthetician
+        if (reservation.getEsthetician() != null && reservation.getEsthetician().getUser() != null) {
+            String estheticianMsg = "New reservation assigned to you for " + dto.serviceName() + 
+                " (Client: " + reservation.getClient().getFirstName() + " " + reservation.getClient().getLastName() + ") at " + dto.startTime();
+            createNotification(reservation.getEsthetician().getUser(), "New Reservation Assigned", estheticianMsg, NotificationType.RESERVATION_CONFIRMED);
+            sendEmail(reservation.getEsthetician().getUser().getEmail(), "New Reservation Assigned", estheticianMsg);
+        }
     }
 
     public void notifyReservationStatus(Reservation reservation) {
         ReservationResponse dto = ReservationMapper.toResponse(reservation);
+        
+        // Notify client
         String message = "Reservation status updated to " + dto.status() + " for " + dto.serviceName();
         createNotification(reservation.getClient().getUser(), "Reservation update", message, NotificationType.SYSTEM);
         sendEmail(reservation.getClient().getUser().getEmail(), "Reservation update", message);
+
+        // Notify esthetician
+        if (reservation.getEsthetician() != null && reservation.getEsthetician().getUser() != null) {
+            String estheticianMsg = "Reservation status updated to " + dto.status() + " for " + dto.serviceName() + 
+                " (Client: " + reservation.getClient().getFirstName() + " " + reservation.getClient().getLastName() + ") at " + dto.startTime();
+            createNotification(reservation.getEsthetician().getUser(), "Reservation Update", estheticianMsg, NotificationType.SYSTEM);
+            sendEmail(reservation.getEsthetician().getUser().getEmail(), "Reservation Update", estheticianMsg);
+        }
     }
 
     private void createNotification(User user, String title, String message, NotificationType type) {

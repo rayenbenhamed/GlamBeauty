@@ -11,15 +11,26 @@ import com.glambeauty.repository.ServiceCategoryRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class ServiceCatalogService {
     private final BeautyServiceRepository serviceRepository;
     private final ServiceCategoryRepository categoryRepository;
+    private final com.glambeauty.repository.EstheticianProfileRepository estheticianRepository;
+    private final com.glambeauty.repository.ReviewRepository reviewRepository;
 
-    public ServiceCatalogService(BeautyServiceRepository serviceRepository, ServiceCategoryRepository categoryRepository) {
+    public ServiceCatalogService(
+        BeautyServiceRepository serviceRepository, 
+        ServiceCategoryRepository categoryRepository,
+        com.glambeauty.repository.EstheticianProfileRepository estheticianRepository,
+        com.glambeauty.repository.ReviewRepository reviewRepository
+    ) {
         this.serviceRepository = serviceRepository;
         this.categoryRepository = categoryRepository;
+        this.estheticianRepository = estheticianRepository;
+        this.reviewRepository = reviewRepository;
     }
 
     public List<ServiceResponse> getAll(Long categoryId) {
@@ -69,5 +80,13 @@ public class ServiceCatalogService {
             throw new NotFoundException("Service not found");
         }
         serviceRepository.deleteById(id);
+    }
+
+    public java.util.Map<String, Long> getPublicStats() {
+        java.util.Map<String, Long> stats = new java.util.HashMap<>();
+        stats.put("servicesCount", serviceRepository.count());
+        stats.put("estheticiansCount", estheticianRepository.count());
+        stats.put("reviewsCount", reviewRepository.count());
+        return stats;
     }
 }

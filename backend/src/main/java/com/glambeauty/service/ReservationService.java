@@ -53,6 +53,22 @@ public class ReservationService {
             .orElseThrow(() -> new NotFoundException("Service not found"));
 
         LocalDateTime endTime = request.startTime().plusMinutes(service.getDurationMinutes());
+
+        if (esthetician.getUser().getRole() == null || esthetician.getUser().getRole().getName() != com.glambeauty.domain.enums.RoleName.ESTHETICIAN) {
+            throw new BadRequestException("Selected profile is not an esthetician");
+        }
+
+        java.time.DayOfWeek day = request.startTime().getDayOfWeek();
+        if (day == java.time.DayOfWeek.MONDAY) {
+            throw new BadRequestException("The center is closed on Mondays");
+        }
+
+        java.time.LocalTime startLocal = request.startTime().toLocalTime();
+        java.time.LocalTime endLocal = endTime.toLocalTime();
+        if (startLocal.isBefore(java.time.LocalTime.of(10, 0)) || endLocal.isAfter(java.time.LocalTime.of(20, 0))) {
+            throw new BadRequestException("Reservations must be within center working hours (Tuesday-Sunday, 10:00 AM to 8:00 PM)");
+        }
+
         boolean overlaps = reservationRepository.existsByEstheticianAndStartTimeLessThanAndEndTimeGreaterThan(
             esthetician,
             endTime,

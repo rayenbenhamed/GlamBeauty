@@ -1,0 +1,14 @@
+{
+  "name": "get_run_configurations",
+  "description": "Returns a list of run configurations for the current project.\nRun configurations are usually used to define user the way how to run a user application, task or test suite from sources.\n\nThis tool provides additional info like command line, working directory, and environment variables if they are available.\n\nUse this tool to query the list of available run configurations in the current project.",
+  "inputSchema": {
+    "properties": {
+      "projectPath": {
+        "type": "string",
+        "description": " The project path. Pass this value ALWAYS if you are aware of it. It reduces numbers of ambiguous calls. \n In the case you know only the current working directory you can use it as the project path.\n If you're not aware about the project path you can ask user about it."
+      }
+    },
+    "required": [],
+    "type": "object"
+  }
+}

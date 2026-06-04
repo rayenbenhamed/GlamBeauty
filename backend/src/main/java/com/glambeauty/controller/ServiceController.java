@@ -30,6 +30,11 @@ public class ServiceController {
         return serviceCatalogService.getAll(categoryId);
     }
 
+    @GetMapping("/services/stats")
+    public java.util.Map<String, Long> getPublicStats() {
+        return serviceCatalogService.getPublicStats();
+    }
+
     @GetMapping("/services/{id}")
     public ServiceResponse getById(@PathVariable Long id) {
         return serviceCatalogService.getById(id);

@@ -1,37 +1,63 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import apiClient from "@/api/client";
 import SectionHeader from "@/components/SectionHeader.jsx";
 import ServiceCard from "@/components/cards/ServiceCard.jsx";
 import PackCard from "@/components/cards/PackCard.jsx";
 import PromotionCard from "@/components/cards/PromotionCard.jsx";
 import EstheticianCard from "@/components/cards/EstheticianCard.jsx";
-import ReviewCard from "@/components/cards/ReviewCard.jsx";
 import StatsStrip from "@/components/StatsStrip.jsx";
 import Button from "@/components/ui/button.jsx";
-import { services, packs, promotions, estheticians, reviews } from "@/data/mockData";
+import { useLanguage } from "@/lib/LanguageContext.jsx";
 
 const Home = () => {
+  const { t } = useLanguage();
+  const [services, setServices] = useState([]);
+  const [packs, setPacks] = useState([]);
+  const [promotions, setPromotions] = useState([]);
+  const [estheticians, setEstheticians] = useState([]);
+
+  useEffect(() => {
+    const fetchHomeData = async () => {
+      try {
+        const servicesRes = await apiClient.get("/services");
+        setServices(servicesRes.data.slice(0, 4));
+
+        const packsRes = await apiClient.get("/packs");
+        setPacks(packsRes.data.slice(0, 3));
+
+        const promosRes = await apiClient.get("/promotions");
+        setPromotions(promosRes.data.slice(0, 2));
+
+        const estheticiansRes = await apiClient.get("/estheticians");
+        setEstheticians(estheticiansRes.data.slice(0, 3));
+      } catch (err) {
+        console.error("Failed to load home details", err);
+      }
+    };
+    fetchHomeData();
+  }, []);
+
   return (
     <main className="fade-up">
       <section className="section-shell pt-16">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <p className="text-xs uppercase tracking-[0.4em] text-gold">
-              Luxury beauty rituals
+              {t("luxury_rituals")}
             </p>
             <h1 className="mt-5 font-display text-4xl text-ink md:text-5xl">
-              A sanctuary of glow, artistry, and serene indulgence.
+              {t("hero_title")}
             </h1>
             <p className="mt-5 text-sm text-ink/70">
-              Glam Beauty Center blends high-touch esthetic care with a modern
-              booking journey. Discover our signature services, tailored packs,
-              and expert estheticians.
+              {t("hero_subtitle")}
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button asChild>
-                <Link to="/booking">Reserve Your Appointment</Link>
+                <Link to="/booking">{t("reserve_appointment")}</Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link to="/services">Explore Services</Link>
+                <Link to="/services">{t("explore_services")}</Link>
               </Button>
             </div>
           </div>
@@ -54,70 +80,65 @@ const Home = () => {
         <StatsStrip />
       </section>
 
-      <section className="section-shell mt-16">
-        <SectionHeader
-          eyebrow="Signature services"
-          title="A curated collection of treatments"
-          subtitle="From radiant makeup to restorative hair rituals, each service is designed for elegance and comfort."
-        />
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {services.map((service) => (
-            <ServiceCard key={service.id} service={service} />
-          ))}
-        </div>
-      </section>
+      {services.length > 0 && (
+        <section className="section-shell mt-16">
+          <SectionHeader
+            eyebrow={t("signature_services")}
+            title={t("curated_collection")}
+            subtitle={t("services_subtitle")}
+          />
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {services.map((service) => (
+              <ServiceCard key={service.id} service={service} />
+            ))}
+          </div>
+        </section>
+      )}
 
-      <section className="section-shell mt-16">
-        <SectionHeader
-          eyebrow="Luxury packs"
-          title="Complete beauty journeys"
-          subtitle="Thoughtfully paired treatments with refined savings."
-        />
-        <div className="grid gap-6 md:grid-cols-3">
-          {packs.map((pack) => (
-            <PackCard key={pack.id} pack={pack} />
-          ))}
-        </div>
-      </section>
+      {packs.length > 0 && (
+        <section className="section-shell mt-16">
+          <SectionHeader
+            eyebrow={t("luxury_packs")}
+            title={t("complete_journeys")}
+            subtitle={t("packs_subtitle")}
+          />
+          <div className="grid gap-6 md:grid-cols-3">
+            {packs.map((pack) => (
+              <PackCard key={pack.id} pack={pack} />
+            ))}
+          </div>
+        </section>
+      )}
 
-      <section className="section-shell mt-16">
-        <SectionHeader
-          eyebrow="Promotions"
-          title="Seasonal elegance"
-          subtitle="Exclusive offers crafted for your special moments."
-        />
-        <div className="grid gap-6 md:grid-cols-2">
-          {promotions.map((promo) => (
-            <PromotionCard key={promo.id} promo={promo} />
-          ))}
-        </div>
-      </section>
+      {promotions.length > 0 && (
+        <section className="section-shell mt-16">
+          <SectionHeader
+            eyebrow={t("promotions")}
+            title={t("seasonal_elegance")}
+            subtitle={t("exclusive_offers")}
+          />
+          <div className="grid gap-6 md:grid-cols-2">
+            {promotions.map((promo) => (
+              <PromotionCard key={promo.id} promo={promo} />
+            ))}
+          </div>
+        </section>
+      )}
 
-      <section className="section-shell mt-16">
-        <SectionHeader
-          eyebrow="Estheticians"
-          title="Crafted by artists"
-          subtitle="Meet the team shaping every experience with precision and care."
-        />
-        <div className="grid gap-6 md:grid-cols-3">
-          {estheticians.map((esthetician) => (
-            <EstheticianCard key={esthetician.id} esthetician={esthetician} />
-          ))}
-        </div>
-      </section>
-
-      <section className="section-shell mt-16 pb-20">
-        <SectionHeader
-          eyebrow="Testimonials"
-          title="Loved by our clients"
-          subtitle="Stories of transformation and confidence."
-        />
-        <div className="grid gap-6 md:grid-cols-2">
-          {reviews.map((review) => (
-            <ReviewCard key={review.id} review={review} />
-          ))}
-        </div>
-      </section>
+      {estheticians.length > 0 && (
+        <section className="section-shell mt-16">
+          <SectionHeader
+            eyebrow={t("estheticians")}
+            title={t("crafted_by_artists")}
+            subtitle={t("meet_team")}
+          />
+          <div className="grid gap-6 md:grid-cols-3">
+            {estheticians.map((esthetician) => (
+              <EstheticianCard key={esthetician.id} esthetician={esthetician} />
+            ))}
+          </div>
+        </section>
+      )}
     </main>
   );
 };

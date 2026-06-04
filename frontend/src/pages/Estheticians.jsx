@@ -1,8 +1,23 @@
+import { useState, useEffect } from "react";
+import apiClient from "@/api/client";
 import SectionHeader from "@/components/SectionHeader.jsx";
 import EstheticianCard from "@/components/cards/EstheticianCard.jsx";
-import { estheticians } from "@/data/mockData";
 
 const Estheticians = () => {
+  const [estheticians, setEstheticians] = useState([]);
+
+  useEffect(() => {
+    const fetchEstheticians = async () => {
+      try {
+        const response = await apiClient.get("/estheticians");
+        setEstheticians(response.data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchEstheticians();
+  }, []);
+
   return (
     <main className="section-shell py-16">
       <SectionHeader

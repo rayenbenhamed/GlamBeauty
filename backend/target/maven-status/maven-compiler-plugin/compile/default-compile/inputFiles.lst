@@ -6,6 +6,7 @@ C:\Users\Rayen\Desktop\Centre esthetique\backend\src\main\java\com\glambeauty\co
 C:\Users\Rayen\Desktop\Centre esthetique\backend\src\main\java\com\glambeauty\controller\BlogController.java
 C:\Users\Rayen\Desktop\Centre esthetique\backend\src\main\java\com\glambeauty\controller\CategoryController.java
 C:\Users\Rayen\Desktop\Centre esthetique\backend\src\main\java\com\glambeauty\controller\EstheticianController.java
+C:\Users\Rayen\Desktop\Centre esthetique\backend\src\main\java\com\glambeauty\controller\FileServeController.java
 C:\Users\Rayen\Desktop\Centre esthetique\backend\src\main\java\com\glambeauty\controller\GalleryController.java
 C:\Users\Rayen\Desktop\Centre esthetique\backend\src\main\java\com\glambeauty\controller\NotificationController.java
 C:\Users\Rayen\Desktop\Centre esthetique\backend\src\main\java\com\glambeauty\controller\PackController.java
@@ -64,6 +65,7 @@ C:\Users\Rayen\Desktop\Centre esthetique\backend\src\main\java\com\glambeauty\dt
 C:\Users\Rayen\Desktop\Centre esthetique\backend\src\main\java\com\glambeauty\dto\ServiceRequest.java
 C:\Users\Rayen\Desktop\Centre esthetique\backend\src\main\java\com\glambeauty\dto\ServiceResponse.java
 C:\Users\Rayen\Desktop\Centre esthetique\backend\src\main\java\com\glambeauty\dto\ServiceStat.java
+C:\Users\Rayen\Desktop\Centre esthetique\backend\src\main\java\com\glambeauty\dto\UserProfileDto.java
 C:\Users\Rayen\Desktop\Centre esthetique\backend\src\main\java\com\glambeauty\dto\UserResponse.java
 C:\Users\Rayen\Desktop\Centre esthetique\backend\src\main\java\com\glambeauty\exception\ApiError.java
 C:\Users\Rayen\Desktop\Centre esthetique\backend\src\main\java\com\glambeauty\exception\BadRequestException.java

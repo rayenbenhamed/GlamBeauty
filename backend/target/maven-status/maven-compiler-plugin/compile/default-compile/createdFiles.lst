@@ -73,11 +73,13 @@ com\glambeauty\exception\GlobalExceptionHandler.class
 com\glambeauty\mapper\AvailabilityMapper.class
 com\glambeauty\domain\Role.class
 com\glambeauty\dto\GalleryRequest.class
+com\glambeauty\controller\FileServeController.class
 com\glambeauty\domain\GalleryItem.class
 com\glambeauty\mapper\ReservationMapper.class
 com\glambeauty\controller\UploadController.class
 com\glambeauty\controller\NotificationController.class
 com\glambeauty\controller\PromotionController.class
+com\glambeauty\dto\UserProfileDto.class
 com\glambeauty\dto\PackResponse.class
 com\glambeauty\service\ImageUploadService.class
 com\glambeauty\dto\CategoryRequest.class

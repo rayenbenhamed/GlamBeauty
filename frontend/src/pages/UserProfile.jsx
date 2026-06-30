@@ -3,6 +3,7 @@ import apiClient from "@/api/client";
 import Button from "@/components/ui/button.jsx";
 import Input from "@/components/ui/input.jsx";
 import Textarea from "@/components/ui/textarea.jsx";
+import ImageCropperModal from "@/components/ImageCropperModal";
 
 const UserProfile = () => {
   const [profile, setProfile] = useState(null);
@@ -18,7 +19,11 @@ const UserProfile = () => {
   const [bio, setBio] = useState("");
   const [skills, setSkills] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  
+  // Image Upload and Cropping State
   const [uploading, setUploading] = useState(false);
+  const [selectedImageSrc, setSelectedImageSrc] = useState(null);
+  const [isCropperOpen, setIsCropperOpen] = useState(false);
 
   useEffect(() => {
     fetchProfile();
@@ -43,12 +48,26 @@ const UserProfile = () => {
     }
   };
 
-  const handlePhotoUpload = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
+  const handlePhotoSelect = (e) => {
+    if (e.target.files && e.target.files.length > 0) {
+      const file = e.target.files[0];
+      const reader = new FileReader();
+      reader.addEventListener("load", () => {
+        setSelectedImageSrc(reader.result?.toString() || "");
+        setIsCropperOpen(true);
+      });
+      reader.readAsDataURL(file);
+      // Reset input so the same file can be selected again if needed
+      e.target.value = "";
+    }
+  };
+
+  const handleCropComplete = async (croppedFile) => {
+    setIsCropperOpen(false);
+    if (!croppedFile) return;
 
     const formData = new FormData();
-    formData.append("file", file);
+    formData.append("file", croppedFile);
 
     setUploading(true);
     setError("");
@@ -61,12 +80,18 @@ const UserProfile = () => {
         }
       });
       setImageUrl(response.data);
-      setSuccess("Photo uploaded successfully! Save your changes to apply.");
+      setSuccess("Photo recadrée et uploadée avec succès ! Enregistrez pour appliquer.");
     } catch (err) {
-      setError("Failed to upload photo. Ensure server is running and configuration is correct.");
+      setError("Échec de l'upload de la photo. Vérifiez votre configuration Cloudinary.");
     } finally {
       setUploading(false);
+      setSelectedImageSrc(null);
     }
+  };
+
+  const handleCropCancel = () => {
+    setIsCropperOpen(false);
+    setSelectedImageSrc(null);
   };
 
   const handleSubmit = async (e) => {
@@ -144,7 +169,7 @@ const UserProfile = () => {
               <input
                 type="file"
                 accept="image/*"
-                onChange={handlePhotoUpload}
+                onChange={handlePhotoSelect}
                 disabled={uploading}
                 className="text-xs text-ink/70 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-gold/10 file:text-gold hover:file:bg-gold/20"
               />
@@ -244,6 +269,14 @@ const UserProfile = () => {
             {saving ? "Saving Changes..." : "Save Profile Details"}
           </Button>
         </form>
+
+        {isCropperOpen && selectedImageSrc && (
+          <ImageCropperModal
+            imageSrc={selectedImageSrc}
+            onCropComplete={handleCropComplete}
+            onCancel={handleCropCancel}
+          />
+        )}
       </div>
     </main>
   );
